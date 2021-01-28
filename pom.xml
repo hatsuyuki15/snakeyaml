@@ -391,38 +391,6 @@
     </reporting>
     <profiles>
         <profile>
-            <id>toolchain</id>
-            <activation>
-                <file>
-                    <exists>${user.home}/.m2/toolchains.xml</exists>
-                </file>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-toolchains-plugin</artifactId>
-                        <version>1.1</version>
-                        <executions>
-                            <execution>
-                                <phase>validate</phase>
-                                <goals>
-                                    <goal>toolchain</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <toolchains>
-                                <jdk>
-                                    <version>${maven.compiler.target}</version>
-                                </jdk>
-                            </toolchains>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <profile>
             <id>build-is-under-jdk6</id>
             <activation>
                 <jdk>1.6</jdk>
